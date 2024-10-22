@@ -14874,7 +14874,11 @@
 /area/maintenance/Deck2_Science_StarCorridor1)
 "aTa" = (
 /turf/unsimulated/mask,
+<<<<<<< HEAD
 /area/hallway/Aft_2_Deck_Stairwell)
+=======
+/area/maintenance/Room_89)
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 "aTb" = (
 /obj/structure/cable/green{
 	d1 = 4;

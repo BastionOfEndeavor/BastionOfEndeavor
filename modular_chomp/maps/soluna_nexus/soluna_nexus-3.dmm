@@ -16730,7 +16730,11 @@
 /area/space)
 "foz" = (
 /turf/unsimulated/mask,
+<<<<<<< HEAD
 /area/hallway/Aft_1_Deck_Stairwell)
+=======
+/area/maintenance/Room_88)
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 "foO" = (
 /obj/structure/cable/green{
 	d1 = 4;

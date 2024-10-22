@@ -44722,7 +44722,11 @@
 "nxq" = (
 /obj/turbolift_map_holder/soluna_nexus/port,
 /turf/simulated/floor/plating/eris/under,
+<<<<<<< HEAD
 /area/hallway/Aft_1_Deck_Stairwell)
+=======
+/area/maintenance/Room_88)
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 "nxr" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -46783,7 +46787,11 @@
 "odp" = (
 /obj/turbolift_map_holder/soluna_nexus/starboard,
 /turf/simulated/floor/plating/eris/under,
+<<<<<<< HEAD
 /area/hallway/Aft_1_Deck_Stairwell)
+=======
+/area/maintenance/Room_88)
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 "odq" = (
 /obj/structure/bed/chair/oldsofa/left{
 	dir = 1
@@ -46853,7 +46861,11 @@
 /area/maintenance/Deck1_Cargo_Chamber1)
 "oex" = (
 /turf/simulated/floor/plating/eris/under,
+<<<<<<< HEAD
 /area/hallway/Aft_1_Deck_Stairwell)
+=======
+/area/maintenance/Room_88)
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 "oeC" = (
 /obj/machinery/camera/network/security{
 	dir = 8;
@@ -53771,7 +53783,11 @@
 "qqZ" = (
 /obj/turbolift_map_holder/soluna_nexus/center,
 /turf/simulated/floor/plating/eris/under,
+<<<<<<< HEAD
 /area/hallway/Aft_1_Deck_Stairwell)
+=======
+/area/maintenance/Room_88)
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 "qra" = (
 /obj/machinery/mineral/stacking_unit_console,
 /turf/simulated/wall/r_wall,
@@ -64131,7 +64147,11 @@
 "tWK" = (
 /obj/turbolift_map_holder/soluna_nexus/aft,
 /turf/simulated/floor/plating/eris/under,
+<<<<<<< HEAD
 /area/hallway/Aft_1_Deck_Stairwell)
+=======
+/area/maintenance/Room_88)
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 "tWM" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows{
@@ -74971,7 +74991,11 @@
 "xMb" = (
 /obj/turbolift_map_holder/soluna_nexus/forward,
 /turf/simulated/floor/plating/eris/under,
+<<<<<<< HEAD
 /area/hallway/Aft_1_Deck_Stairwell)
+=======
+/area/maintenance/Room_88)
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 "xMB" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /obj/effect/map_helper/airlock/atmos/chamber_pump,

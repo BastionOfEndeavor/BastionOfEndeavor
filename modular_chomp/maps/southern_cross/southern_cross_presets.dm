@@ -3,8 +3,12 @@ var/const/NETWORK_SECOND_DECK  = "Second Deck"
 var/const/NETWORK_FIRST_DECK   = "First Deck"
 var/const/NETWORK_SUPPLY       = "Supply"
 var/const/NETWORK_MAIN_OUTPOST = "Main Outpost"
+<<<<<<<< HEAD:modular_chomp/maps/southern_cross/southern_cross_presets.dm
 var/const/NETWORK_CARRIER  = "Exploration Carrier" //CHOMPedit: Exploration outpost cameras
 var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance deck
+========
+var/const/NETWORK_CARRIER  = "Exploration Carrier"
+>>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276)):modular_chomp/maps/soluna_nexus/soluna_nexus_presets.dm
 
 //
 // Cameras
@@ -26,12 +30,15 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 /obj/machinery/camera/network/supply
 	network = list(NETWORK_SUPPLY)
 
-/obj/machinery/camera/network/carrier //CHOMPedit: Exploration carrier cameras
+/obj/machinery/camera/network/carrier
 	network = list(NETWORK_CARRIER)
 
+<<<<<<<< HEAD:modular_chomp/maps/southern_cross/southern_cross_presets.dm
 /obj/machinery/camera/network/maint_deck // CHOMPEdit - Maintenance deck
 	network = list(NETWORK_MAINT_DECK)
 
+========
+>>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276)):modular_chomp/maps/soluna_nexus/soluna_nexus_presets.dm
 // ### Preset machines  ###
 
 
@@ -72,10 +79,11 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 	listening_level = Z_LEVEL_TRANSIT
 	autolinkers = list("tns_relay")
 
-/obj/machinery/telecomms/relay/preset/southerncross/explorer //CHOMPedit: Tcomms relay for exploration carrier
+/obj/machinery/telecomms/relay/preset/southerncross/explorer
 	listening_level = Z_LEVEL_MISC
 	autolinkers = list("exp_relay")
 
+<<<<<<<< HEAD:modular_chomp/maps/southern_cross/southern_cross_presets.dm
 /obj/machinery/telecomms/relay/preset/southerncross/d0
 	id = "Station Relay 0"
 	listening_level = Z_LEVEL_STATION_MAINTS
@@ -101,6 +109,8 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 	autolinkers = list("belt_relay")
 */
 
+========
+>>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276)):modular_chomp/maps/soluna_nexus/soluna_nexus_presets.dm
 /obj/machinery/telecomms/relay/preset/southerncross/centcomm
 	id = "Centcom Relay"
 	listening_level = Z_LEVEL_CENTCOM
