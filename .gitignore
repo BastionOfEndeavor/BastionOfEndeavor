@@ -162,3 +162,6 @@ config/jobwhitelist.txt
 
 #ignore tracy dll
 prof.dll
+
+# Bastion of Endeavor stuff
+tools/ru-merge-upstream-pull-request.sh
