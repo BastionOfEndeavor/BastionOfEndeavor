@@ -1,0 +1,4 @@
+author: "BastionOfEndeavor"
+delete-after: True
+changes:
+  - rscadd: "В Редактор персонажа добавлен пункт \"Рога\", функционирующий как второй слот ушей персонажа."
