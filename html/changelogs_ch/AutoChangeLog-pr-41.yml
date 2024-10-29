@@ -1,0 +1,4 @@
+author: "BastionOfEndeavor"
+delete-after: True
+changes:
+  - rscadd: "Роботы теперь могут выбирать цвет своего фонаря.\n\\:cl:"
