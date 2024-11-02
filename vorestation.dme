@@ -20,6 +20,7 @@
 #include "code\names.dm"
 #include "code\world.dm"
 #include "code\__defines\__globals.dm"
+#include "code\__defines\_case_defines_ru.dm"
 #include "code\__defines\_click.dm"
 #include "code\__defines\_compile_options.dm"
 #include "code\__defines\_helpers.dm"
@@ -5166,4 +5167,5 @@
 #include "modular_chomp\maps\virtual_reality\constructVR.dm"
 #include "modular_chomp\maps\~map_system\_map_selection.dm"
 #include "modular_chomp\maps\~map_system\maps.dm"
+#include "russian\_includes_ru.dm"
 // END_INCLUDE
