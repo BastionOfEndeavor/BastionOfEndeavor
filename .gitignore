@@ -165,3 +165,5 @@ prof.dll
 
 # Bastion of Endeavor stuff
 tools/ru-merge-upstream-pull-request.sh
+russian/_modular/*
+!russian/_modular/icons
