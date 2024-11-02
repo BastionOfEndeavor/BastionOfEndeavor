@@ -19,9 +19,17 @@
 #define COLORMATE_HSV 2
 #define COLORMATE_MATRIX 3
 
+/* Bastion of Endeavor Translation
 #define DEPARTMENT_OFFDUTY			"Off-Duty"
+*/
+#define DEPARTMENT_OFFDUTY			"На отгуле"
+// End of Bastion of Endeavor Translation
 
+/* Bastion of Endeavor Translation
 #define ANNOUNCER_NAME "Facility PA"
+*/
+#define ANNOUNCER_NAME "Система объявлений"
+// End of Bastion of Endeavor Translation
 
 //For custom species
 #define STARTING_SPECIES_POINTS 1 //CHOMPEdit
@@ -52,6 +60,7 @@
 #define SHELTER_DEPLOY_ANCHORED_OBJECTS "anchored objects"
 #define SHELTER_DEPLOY_SHIP_SPACE "ship not in space"
 
+/* Bastion of Endeavor Translation
 #define PTO_SECURITY		"Security"
 #define PTO_MEDICAL			"Medical"
 #define PTO_ENGINEERING 	"Engineering"
@@ -63,6 +72,18 @@
 #define PTO_TALON			"Talon Contractor"
 
 #define DEPARTMENT_TALON	"ITV Talon"
+*/
+#define PTO_SECURITY		"Служба безопасности"
+#define PTO_MEDICAL			"Медицинский отдел"
+#define PTO_ENGINEERING 	"Инженерный отдел"
+#define PTO_SCIENCE			"Научный отдел"
+#define PTO_EXPLORATION 	"Экспедиционный отдел"
+#define PTO_CARGO			"Грузовой отдел"
+#define PTO_CIVILIAN		"Гражданский экипаж"
+#define PTO_CYBORG			"Киборг"
+#define PTO_TALON			"Подрядчик Когтя"
+#define DEPARTMENT_TALON	"НТС Коготь"
+// End of Bastion of Endeavor Translation
 
 #define MAT_TITANIUMGLASS		"ti-glass"
 #define MAT_PLASTITANIUM		"plastitanium"
