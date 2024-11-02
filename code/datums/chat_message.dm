@@ -231,7 +231,11 @@ var/list/runechat_image_cache = list()
 		return
 	ending_life = TRUE
 	animate(message, alpha = 0, time = fadetime, flags = ANIMATION_PARALLEL)
+<<<<<<< HEAD
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), fadetime, TIMER_DELETE_ME)
+=======
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), fadetime, TIMER_DELETE_ME, TIMER_UNIQUE)
+>>>>>>> c5c603926d ([MIRROR] migrate chat messages and phoron spider to self deleting timer (#9390))
 
 /**
   * Creates a message overlay at a defined location for a given speaker
