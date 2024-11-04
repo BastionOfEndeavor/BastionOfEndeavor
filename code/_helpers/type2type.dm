@@ -11,9 +11,15 @@
 //Splits the text of a file at seperator and returns them in a list.
 //returns an empty list if the file doesn't exist
 /world/proc/file2list(filename, seperator="\n", trim = TRUE)
+	/* Bastion of Endeavor Unicode Edit: Hey you never know.
 	if (trim)
 		return splittext(trim(file2text(filename)),seperator)
 	return splittext(file2text(filename),seperator)
+	*/
+	if (trim)
+		return splittext_char(trim(file2text(filename)),seperator)
+	return splittext_char(file2text(filename),seperator)
+	// End of Bastion of Endeavor Unicode Edit
 
 //returns a string the last bit of a type, without the preceeding '/'
 /proc/type2top(the_type)
@@ -34,7 +40,11 @@
 		if(/turf)
 			return "turf"
 		else //regex everything else (works for /proc too)
+			/* Bastion of Endeavor Unicode Edit
 			return lowertext(replacetext("[the_type]", "[type2parent(the_type)]/", ""))
+			*/
+			return lowertext(replacetext_char("[the_type]", "[type2parent(the_type)]/", ""))
+			// End of Bastion of Endeavor Unicode Edit
 
 // Returns an integer given a hexadecimal number string as input.
 /proc/hex2num(hex)
@@ -85,7 +95,11 @@
 
 // Splits the text of a file at seperator and returns them in a list.
 /proc/file2list(filename, seperator="\n")
+	/* Bastion of Endeavor Unicode Edit
 	return splittext(return_file_text(filename),seperator)
+	*/
+	return splittext_char(return_file_text(filename),seperator)
+	// End of Bastion of Endeavor Unicode Edit
 
 // Turns a direction into text
 /proc/num2dir(direction)
@@ -95,9 +109,14 @@
 		if (4.0) return EAST
 		if (8.0) return WEST
 		else
+			/* Bastion of Endeavor Translation
 			to_world_log("UNKNOWN DIRECTION: [direction]")
+			*/
+			to_world_log("НЕИЗВЕСТНОЕ НАПРАВЛЕНИЕ: [direction]")
+			// End of Bastion of Endeavor Translation
 
 // Turns a direction into text
+// Bastion of Endeavor Note: A few procs from here are deprecated with our russian grammar procs.
 /proc/dir2text(direction)
 	switch (direction)
 		if (NORTH)  return "north"
@@ -424,7 +443,11 @@
 
 	. = list()
 
+	/* Bastion of Endeavor Unicode Edit: Dunno... No harm in doing this
 	var/var_found = findtext(t_string,"\[") //Not the actual variables, just a generic "should we even bother" check
+	*/
+	var/var_found = findtext_char(t_string,"\[")
+	// End of Bastion of Endeavor Unicode Edit
 	if(var_found)
 		//Find var names
 
@@ -433,18 +456,33 @@
 		// jointext() --> "A dog said hi name]!"
 		// splittext() --> list("A","dog","said","hi","name]!")
 
+		/* Bastion of Endeavor Unicode Edit
 		t_string = replacetext(t_string,"\[","\[ ")//Necessary to resolve "word[var_name]" scenarios
 		var/list/list_value = splittext(t_string,"\[")
+		*/
+		t_string = replacetext_char(t_string,"\[","\[ ")
+		var/list/list_value = splittext_char(t_string,"\[")
+		// End of Bastion of Endeavor Unicode Edit
 		var/intermediate_stage = jointext(list_value, null)
 
+		/* Bastion of Endeavor Unicode Edit
 		list_value = splittext(intermediate_stage," ")
+		*/
+		list_value = splittext_char(intermediate_stage," ")
+		// End of Bastion of Endeavor Unicode Edit
 		for(var/value in list_value)
+			/* Bastion of Endeavor Unicode Edit
 			if(findtext(value,"]"))
 				value = splittext(value,"]") //"name]!" --> list("name","!")
+			*/
+			if(findtext_char(value,"]"))
+				value = splittext_char(value,"]")
+			// End of Bastion of Endeavor Unicode Edit
 				for(var/A in value)
 					if(var_source.vars.Find(A))
 						. += A
 
+// Bastion of Endeavor Note: Probably unnecessary to include unicode in here.
 /proc/get_end_section_of_type(type)
 	var/strtype = "[type]"
 	var/delim_pos = findlasttext(strtype, "/")
@@ -539,7 +577,11 @@
 
 // Converts a string into a list by splitting the string at each delimiter found. (discarding the seperator)
 /proc/text2list(text, delimiter="\n")
+	/* Bastion of Endeavor Unicode Edit
 	var/delim_len = length(delimiter)
+	*/
+	var/delim_len = length_char(delimiter)
+	// End of Bastion of Endeavor Unicode Edit
 	if (delim_len < 1)
 		return list(text)
 
@@ -548,8 +590,13 @@
 	var/found
 
 	do
+		/* Bastion of Endeavor Unicode Edit
 		found       = findtext(text, delimiter, last_found, 0)
 		.          += copytext(text, last_found, found)
+		*/
+		found       = findtext_char(text, delimiter, last_found, 0)
+		.          += copytext_char(text, last_found, found)
+		// End of Bastion of Endeavor Unicode Edit
 		last_found  = found + delim_len
 	while (found)
 
@@ -576,18 +623,34 @@
 		if(fexists(filename))
 			. = file2text(filename)
 			if(!. && error_on_invalid_return)
+				/* Bastion of Endeavor Translation
 				error("File empty ([filename])")
+				*/
+				error("Файл пуст ([filename]).")
+				// End of Bastion of Endeavor Translation
 		else if(error_on_invalid_return)
+			/* Bastion of Endeavor Translation
 			error("File not found ([filename])")
+			*/
+			error("Файл не найден ([filename]).")
+			// End of Bastion of Endeavor Translation
 	catch(var/exception/E)
 		if(error_on_invalid_return)
+			/* Bastion of Endeavor Translation
 			error("Exception when loading file as string: [E]")
+			*/
+			error("Ошибка при попытке загрузки файла в качестве текста: [E].")
+			// End of Bastion of Endeavor Translation
 
 
 /// Return html to load a url.
 /// for use inside of browse() calls to html assets that might be loaded on a cdn.
 /proc/url2htmlloader(url)
+	/* Bastion of Endeavor Unicode Edit: Might be overkill, might not?
 	return {"<html><head><meta http-equiv="refresh" content="0;URL='[url]'"/></head><body onLoad="parent.location='[url]'"></body></html>"}
+	*/
+	return {"<html><head><meta charset="UTF-8" http-equiv="refresh" content="0;URL='[url]'"/></head><body onLoad="parent.location='[url]'"></body></html>"}
+	// End of Bastion of Endeavor Unicode Edit
 
 /// Returns a list with all keys turned into paths
 /proc/text2path_list(list/L)
