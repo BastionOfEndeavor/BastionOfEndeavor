@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(job)
+	/* Bastion of Endeavor Translation
 	name = "Job"
+	*/
+	name = "Работы"
+	// End of Bastion of Endeavor Translation
 	init_order = INIT_ORDER_JOB
 	flags = SS_NO_FIRE
 
@@ -30,7 +34,11 @@ SUBSYSTEM_DEF(job)
 	occupations = list()
 	var/list/all_jobs = subtypesof(/datum/job)
 	if(!all_jobs.len)
+		/* Bastion of Endeavor Translation
 		to_chat(world, span_warning("Error setting up jobs, no job datums found"))
+		*/
+		to_chat(world, span_warning("Ошибка при инициализации работ: не найдены датумы работ."))
+		// End of Bastion of Endeavor Translation
 		return FALSE
 
 	for(var/J in all_jobs)
@@ -58,7 +66,11 @@ SUBSYSTEM_DEF(job)
 	for(var/D in J.departments)
 		var/datum/department/dept = LAZYACCESS(department_datums, D)
 		if(!istype(dept))
+			/* Bastion of Endeavor Translation
 			job_debug_message("Job '[J.title]' is defined as being inside department '[D]', but it does not exist.")
+			*/
+			job_debug_message("Работа '[J.title]' закреплена за отделом '[D]', но его не существует.")
+			// End of Bastion of Endeavor Translation
 			continue
 		dept.jobs[J.title] = J
 
@@ -68,7 +80,11 @@ SUBSYSTEM_DEF(job)
 		var/primary_department = J.departments[1]
 		var/datum/department/dept = LAZYACCESS(department_datums, primary_department)
 		if(!istype(dept))
+			/* Bastion of Endeavor Translation
 			job_debug_message("Job '[J.title]' has their primary department be '[primary_department]', but it does not exist.")
+			*/
+			job_debug_message("У работы '[J.title]' основной отдел – '[primary_department]', однако его не существует.")
+			// End of Bastion of Endeavor Translation
 		else
 			dept.primary_jobs[J.title] = J
 
@@ -112,7 +128,11 @@ SUBSYSTEM_DEF(job)
 			job_titles += J
 		return job_titles
 
+	/* Bastion of Endeavor Translation
 	job_debug_message("Was asked to get job titles for a non-existant department '[target_department_name]'.")
+	*/
+	job_debug_message("Потребовалось получить названия работ для несуществующего отдела '[target_department_name]'.")
+	// End of Bastion of Endeavor Translation
 	return list()
 
 // Returns a reference to the primary department datum that a job is in.
@@ -125,7 +145,11 @@ SUBSYSTEM_DEF(job)
 			J = get_job(J)
 
 	if(!istype(J))
+		/* Bastion of Endeavor Translation
 		job_debug_message("Was asked to get department for job '[J]', but input could not be resolved into a job datum.")
+		*/
+		job_debug_message("Потребовалось получить отдел работы '[J]', однако входные данные не являются датумом.")
+		// End of Bastion of Endeavor Translation
 		return
 
 	if(!LAZYLEN(J.departments))
@@ -134,7 +158,11 @@ SUBSYSTEM_DEF(job)
 	var/primary_department = J.departments[1]
 	var/datum/department/dept = LAZYACCESS(department_datums, primary_department)
 	if(!istype(dept))
+		/* Bastion of Endeavor Translation
 		job_debug_message("Job '[J.title]' has their primary department be '[primary_department]', but it does not exist.")
+		*/
+		job_debug_message("У работы '[J.title]' основной отдел – '[primary_department]', однако его не существует.")
+		// End of Bastion of Endeavor Translation
 		return
 
 	return department_datums[primary_department]
@@ -148,7 +176,11 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/job_debug_message(message)
 	if(debug_messages)
+		/* Bastion of Endeavor Translation
 		log_debug("JOB DEBUG: [message]")
+		*/
+		log_debug("ОТЛАДКА РАБОТ: [message]")
+		// End of Bastion of Endeavor Translation
 
 //CHOMPadd start
 /datum/controller/subsystem/job/proc/load_camp_lists()
@@ -162,11 +194,19 @@ SUBSYSTEM_DEF(job)
 		fdel(savepath)
 	var/json_to_file = json_encode(shift_keys)
 	if(!json_to_file)
+		/* Bastion of Endeavor Translation
 		log_debug("Saving: [savepath] failed jsonencode")
+		*/
+		log_debug("Сохранение: Для [savepath] провалился jsonencode.")
+		// End of Bastion of Endeavor Translation
 		return
 
 	//Write it out
 	rustg_file_write(json_to_file, savepath)
 	if(!fexists(savepath))
+		/* Bastion of Endeavor Translation
 		log_debug("Saving: failed to save [savepath]")
+		*/
+		log_debug("Сохранение: Сохранение не удалось для [savepath].")
+		// End of Bastion of Endeavor Translation
 //CHOMPadd end
