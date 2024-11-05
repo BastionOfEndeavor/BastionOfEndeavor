@@ -1,0 +1,4 @@
+author: "BastionOfEndeavor"
+delete-after: True
+changes:
+  - bugfix: "Исправлено отображение портянок на пальцеходящих ступнях."
