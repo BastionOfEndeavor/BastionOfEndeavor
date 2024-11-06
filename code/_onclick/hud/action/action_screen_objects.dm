@@ -247,7 +247,11 @@
 // A new way to interact with actions
 
 /obj/screen/button_palette
+	/* Bastion of Endeavor Translation
 	desc = "<b>Drag</b> buttons to move them<br><b>Shift-click</b> any button to reset it<br><b>Alt-click</b> this to reset all buttons"
+	*/
+	desc = "Вы можете <b>перетаскивать</b> кнопки действия на экране.<br><b>Shift+ЛКМ</b> позволяет сбросить положение кнопки.<br><b>Alt+ЛКМ</b> позволяет сбросить положение всех кнопок."
+	// End of Bastion of Endeavor Translation
 	icon = 'icons/hud/64x16_actions.dmi'
 	icon_state = "screen_gen_palette"
 	screen_loc = ui_action_palette
@@ -343,7 +347,11 @@ GLOBAL_LIST_INIT(palette_removed_matrix, list(1.4,0,0,0, 0.7,0.4,0,0, 0.4,0,0.6,
 			for(var/datum/hud/hud as anything in action.viewers)
 				var/obj/screen/movable/action_button/button = action.viewers[hud]
 				hud.position_action(button, SCRN_OBJ_DEFAULT)
+		/* Bastion of Endeavor Translation
 		to_chat(usr, span_notice("Action button positions have been reset."))
+		*/
+		to_chat(usr, span_notice("Расположение всех кнопок действий было сброшено."))
+		// End of Bastion of Endeavor Translation
 		return TRUE
 
 	set_expanded(!expanded)
@@ -420,8 +428,13 @@ GLOBAL_LIST_INIT(palette_removed_matrix, list(1.4,0,0,0, 0.7,0.4,0,0, 0.4,0,0.6,
 	return ..()
 
 /obj/screen/palette_scroll/down
+	/* Bastion of Endeavor Translation
 	name = "Scroll Down"
 	desc = "<b>Click</b> on this to scroll the actions above down"
+	*/
+	name = "Прокрутить вниз"
+	desc = "<b>Нажмите</b> сюда, чтобы прокрутить кнопки действий вниз."
+	// End of Bastion of Endeavor Translation
 	icon_state = "scroll_down"
 	scroll_direction = 1
 
@@ -433,8 +446,13 @@ GLOBAL_LIST_INIT(palette_removed_matrix, list(1.4,0,0,0, 0.7,0.4,0,0, 0.4,0,0.6,
 	return ..()
 
 /obj/screen/palette_scroll/up
+	/* Bastion of Endeavor Translation
 	name = "Scroll Up"
 	desc = "<b>Click</b> on this to scroll the actions above up"
+	*/
+	name = "Прокрутить вверх"
+	desc = "<b>Нажмите</b> сюда, чтобы прокрутить кнопки действий вверх."
+	// End of Bastion of Endeavor Translation
 	icon_state = "scroll_up"
 	scroll_direction = -1
 
@@ -447,8 +465,13 @@ GLOBAL_LIST_INIT(palette_removed_matrix, list(1.4,0,0,0, 0.7,0.4,0,0, 0.4,0,0.6,
 
 /// Exists so you have a place to put your buttons when you move them around
 /obj/screen/action_landing
+	/* Bastion of Endeavor Translation
 	name = "Button Space"
 	desc = "<b>Drag and drop</b> a button into this spot<br>to add it to the group"
+	*/
+	name = "Слот кнопки действия"
+	desc = "<b>Перетащите</b> кнопку действия сюда, чтобы добавить её в группу."
+	// End of Bastion of Endeavor Translation
 	icon = 'icons/hud/screen_gen.dmi'
 	icon_state = "reserved"
 	// We want our whole 32x32 space to be clickable, so dropping's forgiving

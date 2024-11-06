@@ -46,7 +46,11 @@
 		if(is_component_functioning("camera"))
 			aiCamera.captureimage(A, usr)
 		else
+			/* Bastion of Endeavor Translation
 			to_chat(src, span_userdanger("Your camera isn't functional."))
+			*/
+			to_chat(src, span_userdanger("Ваша камера не функционирует."))
+			// End of Bastion of Endeavor Translation
 		return
 
 	/*

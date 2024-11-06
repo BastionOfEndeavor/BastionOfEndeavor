@@ -16,7 +16,11 @@
 		return COMPONENT_INCOMPATIBLE
 
 	if(!item && !item_callback)
+		/* Bastion of Endeavor Translation
 		stack_trace("[type] created without a reference item or an item callback - one or the other is required.")
+		*/
+		stack_trace("Тип [type] создан без ссылки на предмет или его callback.")
+		// End of Bastion of Endeavor Translation
 		return COMPONENT_INCOMPATIBLE
 
 	src.item_ref = WEAKREF(item)

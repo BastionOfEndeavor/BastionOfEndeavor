@@ -396,7 +396,11 @@ var/list/global_huds = list(
 	set hidden = 1
 
 	if(!hud_used)
+		/* Bastion of Endeavor Translation
 		to_chat(usr, span_warning("This mob type does not use a HUD."))
+		*/
+		to_chat(usr, span_warning("Ваш тип существа не использует интерфейс."))
+		// Bastion of Endeavor Translation
 		return FALSE
 	if(!client)
 		return FALSE
