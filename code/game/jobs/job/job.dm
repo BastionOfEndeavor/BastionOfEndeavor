@@ -37,7 +37,11 @@
 	var/mob_type = JOB_CARBON 		      // Bitflags representing mob type this job spawns
 
 	// Description of the job's role and minimum responsibilities.
+	/* Bastion of Endeavor Translation
 	var/job_description = "This Job doesn't have a description! Please report it!"
+	*/
+	var/job_description = "У этой работы нет описания! Сообщите об этом администраторам!"
+	// End of Bastion of Endeavor Translation
 
 	var/camp_protection = FALSE				//CHOMPadd
 	var/list/restricted_keys = list()		//CHOMPadd
@@ -81,18 +85,32 @@
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null, offmap_spawn)
 	if(H.mind)
 		var/remembered_info = ""
+		/* Bastion of Endeavor Translation
 		remembered_info += span_bold("Your account number is:") + " #[M.account_number]<br>"
 		remembered_info += span_bold("Your account pin is:") + " [M.remote_access_pin]<br>"
 		remembered_info += span_bold("Your account funds are:") + " $[M.money]<br>"
+		*/
+		remembered_info += span_bold("Номер вашего счёта:") + " #[M.account_number]<br>"
+		remembered_info += span_bold("Пароль вашего счёта:") + " [M.remote_access_pin]<br>"
+		remembered_info += span_bold("Баланс вашего счёта:") + " $[M.money]<br>"
+		// End of Bastion of Endeavor Translation
 
 		if(M.transaction_log.len)
 			var/datum/transaction/T = M.transaction_log[1]
+			/* Bastion of Endeavor Translation
 			remembered_info += span_bold("Your account was created:") + " [T.time], [T.date] at [T.source_terminal]<br>"
+			*/
+			remembered_info += span_bold("Ваш счёт создан в") + " [T.time], [T.date] at [T.source_terminal]<br>"
+			// End of Bastion of Endeavor Translation
 		H.mind.store_memory(remembered_info)
 
 		H.mind.initial_account = M
 
+	/* Bastion of Endeavor Translation
 	to_chat(H, span_boldnotice("Your account number is: [M.account_number], your account pin is: [M.remote_access_pin]"))
+	*/
+	to_chat(H, span_boldnotice("Номер вашего счёта – [M.account_number], пароль – [M.remote_access_pin]"))
+	// End of Bastion of Endeavor Translation
 
 // overrideable separately so AIs/borgs can have cardborg hats without unneccessary new()/qdel()
 /datum/job/proc/equip_preview(mob/living/carbon/human/H, var/alt_title)
