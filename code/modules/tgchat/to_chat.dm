@@ -25,7 +25,11 @@
 	if(!target)
 		return
 	if(!html && !text)
+		/* Bastion of Endeavor Translation
 		CRASH("Empty or null string in to_chat proc call.")
+		*/
+		CRASH("Пустой или нулевой текст в вызове to_chat.")
+		// End of Bastion of Endeavor Translation
 	if(target == world)
 		target = GLOB.clients
 
@@ -72,7 +76,11 @@
 	if(!target)
 		return
 	if(!html && !text)
+		/* Bastion of Endeavor Translation
 		CRASH("Empty or null string in to_chat proc call.")
+		*/
+		CRASH("Пустой или нулевой текст в вызове to_chat.")
+		// End of Bastion of Endeavor Translation
 	if(target == world)
 		target = GLOB.clients
 
