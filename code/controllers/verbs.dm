@@ -63,7 +63,7 @@
 // Debug verbs.
 /* Bastion of Endeavor Translation
 /client/proc/restart_controller(controller in list("Master", "Failsafe"))
-	set category = "Debug.Dangerous" //CHOMPEdit
+	set category = "Debug.Dangerous"
 	set name = "Restart Controller"
 	set desc = "Restart one of the various periodic loop controllers for the game (be careful!)"
 */
@@ -99,7 +99,7 @@
 
 /client/proc/debug_antagonist_template(antag_type in all_antag_types)
 	/* Bastion of Endeavor Translation
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "Debug Antagonist"
 	set desc = "Debug an antagonist template."
 	*/
@@ -119,7 +119,7 @@
 
 /client/proc/debug_controller()
 	/* Bastion of Endeavor Translation
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "Debug Controller"
 	set desc = "Debug the various subsystems/controllers for the game (be careful!)"
 	*/

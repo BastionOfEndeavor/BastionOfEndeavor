@@ -57,11 +57,13 @@ GLOBAL_LIST_INIT(custom_species_bases, new) // Species that can be used for a Cu
 	//Underwear
 var/datum/category_collection/underwear/global_underwear = new()
 
-	//Backpacks
+	//Customizables
 /* Bastion of Endeavor Translation
-var/global/list/backbaglist = list("Nothing", "Backpack", "Satchel", "Satchel Alt", "Messenger Bag", "Sports Bag", "Strapless Satchel") //VOREStation edit
+GLOBAL_LIST_INIT(headsetlist, list("Standard","Bowman","Earbud"))
+var/global/list/backbaglist = list("Nothing", "Backpack", "Satchel", "Satchel Alt", "Messenger Bag", "Sports Bag", "Strapless Satchel")
 var/global/list/pdachoicelist = list("Default", "Slim", "Old", "Rugged", "Holographic", "Wrist-Bound","Slider", "Vintage")
 */
+GLOBAL_LIST_INIT(headsetlist, list("Стандартная гарнитура","Гарнитура с оголовьем","Беспроводной наушник"))
 var/global/list/backbaglist = list("Нет", "Рюкзак", "Сумка", "Ранец", "Курьерская сумка", "Спортивная сумка", "Сумка без лямки")
 var/global/list/pdachoicelist = list("Обычный", "Тонкий", "Старый", "Потрёпанный", "Голографический", "Наручный", "Выдвижной", "Винтажный")
 // End of Bastion of Endeavor Translation

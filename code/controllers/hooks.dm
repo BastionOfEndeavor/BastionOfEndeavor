@@ -33,10 +33,10 @@
 		// End of Bastion of Endeavor Translation
 		return 0
 
-	var/caller = new hook_path
+	var/requester = new hook_path
 	var/status = 1
 	for(var/P in typesof("[hook_path]/proc"))
-		if(!call(caller, P)(arglist(args)))
+		if(!call(requester, P)(arglist(args)))
 			/* Bastion of Endeavor Translation
 			error("Hook '[P]' failed or runtimed.")
 			*/

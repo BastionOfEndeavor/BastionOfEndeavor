@@ -6,7 +6,7 @@ var/can_call_traders = 1
 /client/proc/trader_ship()
 	/* Bastion of Endeavor Translation
 	set name = "Dispatch Beruang Trader Ship"
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set desc = "Invite players to join the Beruang."
 	*/
 	set name = "Отправить Беруанг"
@@ -76,7 +76,7 @@ var/can_call_traders = 1
 
 	/* Bastion of Endeavor Translation
 	set name = "Join Trader Visit"
-	set category = "IC.Event" //CHOMPEdit
+	set category = "IC.Event"
 	*/
 	set name = "Присоединиться к торговцам"
 	set category = "IC.События"
