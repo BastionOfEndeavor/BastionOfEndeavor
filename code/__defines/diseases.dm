@@ -20,11 +20,20 @@
 
 
 //Severity Defines
+/* Bastion of Endeavor Translation
 #define NONTHREAT	"No threat"
 #define MINOR		"Minor"
 #define MEDIUM		"Medium"
 #define HARMFUL		"Harmful"
 #define DANGEROUS 	"Dangerous!"
 #define BIOHAZARD	"BIOHAZARD THREAT!"
+*/
+#define NONTHREAT	"Нет угрозы"
+#define MINOR		"Слабая угроза"
+#define MEDIUM		"Средняя угроза"
+#define HARMFUL		"Высокая угроза"
+#define DANGEROUS 	"Опасно!"
+#define BIOHAZARD	"БИОЛОГИЧЕСКАЯ УГРОЗА!"
+// End of Bastion of Endeavor Translation
 
 #define SYMPTOM_ACTIVATION_PROB 3
