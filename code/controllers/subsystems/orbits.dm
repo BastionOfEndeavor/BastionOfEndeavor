@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(orbit)
+	/* Bastion of Endeavor Translation
 	name = "Orbits"
+	*/
+	name = "Орбиты"
+	// End of Bastion of Endeavor Translation
 	priority = FIRE_PRIORITY_ORBIT
 	wait = 2
 	flags = SS_NO_INIT|SS_TICKER
@@ -8,7 +12,11 @@ SUBSYSTEM_DEF(orbit)
 	var/list/processing = list()
 
 /datum/controller/subsystem/orbit/stat_entry(msg)
+	/* Bastion of Endeavor Translation
 	msg = "P:[processing.len]"
+	*/
+	msg = "| Обрабатывается: [processing.len]"
+	// End of Bastion of Endeavor Translation
 	return ..()
 
 

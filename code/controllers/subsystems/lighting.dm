@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(lighting)
+	/* Bastion of Endeavor Translation
 	name = "Lighting"
+	*/
+	name = "Освещение"
+	// End of Bastion of Endeavor Translation
 	wait = 2
 	init_order = INIT_ORDER_LIGHTING
 	flags = SS_TICKER
@@ -14,7 +18,11 @@ SUBSYSTEM_DEF(lighting)
 	var/list/z_to_pshandler = list() //CHOMPEdit
 
 /datum/controller/subsystem/lighting/stat_entry(msg)
+	/* Bastion of Endeavor Translation
 	msg = "L:[length(sources_queue)]|C:[length(corners_queue)]|O:[length(objects_queue)]"
+	*/
+	msg = "| Источников: [length(sources_queue)] | Углов: [length(corners_queue)] | Объектов: [length(objects_queue)]"
+	// End of Bastion of Endeavor Translation
 	return ..()
 
 

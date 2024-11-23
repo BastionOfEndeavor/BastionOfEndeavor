@@ -397,4 +397,8 @@ var/global/datum/controller/radio/radio_controller
 		if(islist(data[i]))
 			var/list/L = data[i]
 			for(var/t in L)
+				/* Bastion of Endeavor Translation
 				. += "data\[\"[i]\"\] list has: [t]"
+				*/
+				. += "список data\[\"[i]\"\] имеет: [t]"
+				// End of Bastion of Endeavor Translation

@@ -1,3 +1,4 @@
+// Bastion of Endeavor TODO
 // Used to direct channels to speak into.
 #define SAY_CHANNEL "Say"
 #define RADIO_CHANNEL "Radio"

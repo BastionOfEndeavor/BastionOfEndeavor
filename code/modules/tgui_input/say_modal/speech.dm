@@ -13,12 +13,21 @@
 	if(!entry || payload["channel"] == OOC_CHANNEL || payload["channel"] == ME_CHANNEL || payload["channel"] == LOOC_CHANNEL)
 		return pick(hurt_phrases)
 	/// Random trimming for larger sentences
+	/* Bastion of Endeavor Unicode Edit
 	if(length(entry) > 50)
+	*/
+	if(length_char(entry) > 50)
+	// End of Bastion of Endeavor Unicode Edit
 		entry = trim(entry, rand(40, 50))
 	else
 		/// Otherwise limit trim to just last letter
+	/* Bastion of Endeavor Unicode Edit
 		if(length(entry) > 1)
 			entry = trim(entry, length(entry))
+	*/
+		if(length_char(entry) > 1)
+			entry = trim(entry, length_char(entry))
+	// End of Bastion of Endeavor Unicode Edit
 	return entry + "-" + pick(hurt_phrases)
 
 /**
@@ -90,10 +99,17 @@
  *  boolean - success or failure
  */
 /datum/tgui_say/proc/handle_entry(type, payload)
+	/* Bastion of Endeavor Translation
 	if(!payload?["channel"] || !payload["entry"])
 		CRASH("[usr] entered in a null payload to the chat window.")
 	if(length(payload["entry"]) > max_length)
 		CRASH("[usr] has entered more characters than allowed into a TGUI-Say")
+	*/
+	if(!payload?["channel"] || !payload["entry"])
+		CRASH("[usr] задал нулевой ввод в окне чата.")
+	if(length_char(payload["entry"]) > max_length)
+		CRASH("[usr] ввёл слишком много символов в TGUI-Say")
+	// End of Bastion of Endeavor Translation
 	if(type == "entry")
 		delegate_speech(payload["entry"], payload["channel"])
 		return TRUE

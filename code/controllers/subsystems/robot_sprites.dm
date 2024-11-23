@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(robot_sprites)
+	/* Bastion of Endeavor Translation
 	name = "Robot Sprites"
+	*/
+	name = "Спрайты роботов"
+	// End of Bastion of Endeavor Translation
 	init_order = INIT_ORDER_ROBOT_SPRITES
 	flags = SS_NO_FIRE
 	var/list/all_cyborg_sprites = list()

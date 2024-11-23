@@ -1,7 +1,11 @@
 //CHOMPEDIT -- this file is no longer ticked. See overlays_ch.dm for the new overlays subsystem.
 
 SUBSYSTEM_DEF(overlays)
+	/* Bastion of Endeavor Translation
 	name = "Overlay"
+	*/
+	name = "Оверлеи"
+	// End of Bastion of Endeavor Translation
 	flags = SS_TICKER
 	wait = 1 // SS_TICKER - Ticks
 	priority = FIRE_PRIORITY_OVERLAYS
@@ -35,7 +39,11 @@ SUBSYSTEM_DEF(overlays)
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/overlays/stat_entry(msg)
+	/* Bastion of Endeavor Translation
 	msg = "Queued Atoms: [queue.len], Cache Size: [cache_size]"
+	*/
+	msg = "| Атомов в очереди: [queue.len] | Размер кэша: [cache_size]"
+	// End of Bastion of Endeavor Translation
 	return ..()
 
 /datum/controller/subsystem/overlays/fire(resumed, no_mc_tick)

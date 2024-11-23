@@ -39,7 +39,11 @@
 /datum/hud/proc/hide_action(obj/screen/movable/action_button/button)
 	switch(button.location)
 		if(SCRN_OBJ_DEFAULT) // Invalid
+			/* Bastion of Endeavor Translation
 			CRASH("We just tried to hide an action buttion that somehow has the default position as its location, you done fucked up")
+			*/
+			CRASH("Попытка скрыть кнопку действия, положение по умолчанию которой сходится с текущим расположением.")
+			// End of Bastion of Endeavor Translation
 		if(SCRN_OBJ_FLOATING)
 			floating_actions -= button
 		if(SCRN_OBJ_IN_LIST)

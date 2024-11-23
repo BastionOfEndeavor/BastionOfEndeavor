@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(aifast)
+	/* Bastion of Endeavor Translation
 	name = "AI (Fast)"
+	*/
+	name = "ИИ (быстрый)"
+	// End of Bastion of Endeavor Translation
 	init_order = INIT_ORDER_AI_FAST
 	priority = FIRE_PRIORITY_AI
 	wait = 0.25 SECONDS // Every quarter second
@@ -10,7 +14,11 @@ SUBSYSTEM_DEF(aifast)
 	var/list/currentrun = list()
 
 /datum/controller/subsystem/aifast/stat_entry(msg)
+	/* Bastion of Endeavor Translation
 	msg = "P:[processing.len]"
+	*/
+	msg = "| Обрабатывается: [processing.len]"
+	// End of Bastion of Endeavor Translation
 	return ..()
 
 /datum/controller/subsystem/aifast/fire(resumed = 0)

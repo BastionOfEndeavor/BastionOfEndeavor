@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(ai)
+	/* Bastion of Endeavor Translation
 	name = "AI"
+	*/
+	name = "Искусственный интеллект"
+	// End of Bastion of Endeavor Translation
 	init_order = INIT_ORDER_AI
 	priority = FIRE_PRIORITY_AI
 	wait = 2 SECONDS
@@ -13,7 +17,11 @@ SUBSYSTEM_DEF(ai)
 	var/list/process_z = list()
 
 /datum/controller/subsystem/ai/stat_entry(msg)
+	/* Bastion of Endeavor Translation
 	msg = "P: [processing.len] | S: [slept_mobs]"
+	*/
+	msg = "| Обрабатывается: [processing.len] | Спит: [slept_mobs]"
+	// End of Bastion of Endeavor Translation
 	return ..()
 
 /datum/controller/subsystem/ai/fire(resumed = 0)

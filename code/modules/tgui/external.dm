@@ -181,17 +181,33 @@
  * Conveniently, also allows devs to force a dev server reattach without relogging, since it yeets windows.
  */
 /client/verb/tgui_fix_white()
+	/* Bastion of Endeavor Translation
 	set desc = "Only use this if you have a broken TGUI window occupying your screen!"
 	set name = "Fix TGUI"
 	set category = "OOC.Debug"
+	*/
+	set desc = "Используйте этот глагол, если на экране зависли белые окна."
+	set name = "Закрыть окна TGUI"
+	set category = "OOC.Отладка"
+	// End of Bastion of Endeavor Translation
 
+	/* Bastion of Endeavor Translation
 	if(alert(src, "Only use this verb if you have a white TGUI window stuck on your screen.", "Fix TGUI", "Continue", "Nevermind") != "Continue") // Not tgui_alert since we're fixing tgui
+	*/
+	if(alert(src, "С помощью этой команды можно удалить с экрана белые окна TGUI.", "Закрыть окна TGUI", "Продолжить", "Отмена") != "Продолжить") // Not tgui_alert since we're fixing tgui
+	// End of Bastion of Endeavor Translation
 		return
 
 	SStgui.close_user_uis(mob)
+	/* Bastion of Endeavor Translation
 	if(alert(src, "Did that fix the problem?", "Fix TGUI", "Yes", "No") == "No") // Not tgui_alert since we're fixing tgui
 		SStgui.force_close_all_windows(mob)
 		alert(src, "UIs should be fixed now. If not, please cry to your nearest coder.", "Fix TGUI") // Not tgui_alert since we're fixing tgui
+	*/
+	if(alert(src, "Это помогло починить проблему?", "Закрыть окна TGUI", "Да", "Нет") == "Нет") // Not tgui_alert since we're fixing tgui
+		SStgui.force_close_all_windows(mob)
+		alert(src, "Зависшие окна интерфейса TGUI должны быть закрыты. Если нет, сообщите об этом кодерам.", "Закрыть окна TGUI") // Not tgui_alert since we're fixing tgui
+	// End of Bastion of Endeavor Translation
 
 /**
  * verb
@@ -247,7 +263,11 @@
 		window = usr.client.tgui_windows[window_id]
 		if(!window)
 			// #ifdef TGUI_DEBUGGING // Always going to log these
+			/* Bastion of Endeavor Translation
 			log_tgui(usr, "Error: Couldn't find the window datum, force closing.")
+			*/
+			log_tgui(usr, "Ошибка: Не найден датум окна. Закрываем окно.")
+			// End of Bastion of Endeavor Translation
 			// #endif
 			SStgui.force_close_window(usr, window_id)
 			return FALSE

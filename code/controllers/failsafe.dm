@@ -7,7 +7,11 @@
 GLOBAL_REAL(Failsafe, /datum/controller/failsafe) // CHOMPEdit - Managed Globals
 
 /datum/controller/failsafe // This thing pretty much just keeps poking the master controller
+	/* Bastion of Endeavor Translation
 	name = "Failsafe"
+	*/
+	name = "Проверочный контроллер"
+	// End of Bastion of Endeavor Translation
 
 	// The length of time to check on the MC (in deciseconds).
 	// Set to 0 to disable.
@@ -57,23 +61,44 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe) // CHOMPEdit - Managed Globals
 						if(4,5)
 							--defcon
 						if(3)
+							/* Bastion of Endeavor Translation
 							log_and_message_admins(span_adminnotice("SSfailsafe Notice: DEFCON [defcon_pretty()]. The Master Controller (\ref[Master]) has not fired in the last [(5-defcon) * processing_interval] ticks."))
+							*/
+							log_and_message_admins(span_adminnotice("Информация SSfailsafe: DEFCON [defcon_pretty()]. Главный контроллер (\ref[Master]) не срабатывает уже [count_ru(((5-defcon) * processing_interval), "тик;;а;ов")]."))
+							// End of Bastion of Endeavor Translation
 							--defcon
 						if(2)
+							/* Bastion of Endeavor Translation
 							log_and_message_admins(span_boldannounce("SSfailsafe Warning: DEFCON [defcon_pretty()]. The Master Controller (\ref[Master]) has not fired in the last [(5-defcon) * processing_interval] ticks. Automatic restart in [processing_interval] ticks."))
+							*/
+							log_and_message_admins(span_boldannounce("Предупреждение SSfailsafe: DEFCON [defcon_pretty()]. Главный контроллер (\ref[Master]) не срабатывает уже [count_ru(((5-defcon) * processing_interval), "тик;;а;ов")]. Автоматический перезапуск через [count_ru(processing_interval, "тик;;а;ов")]."))
+							// End of Bastion of Endeavor Translation
 							--defcon
 						if(1)
 
+							/* Bastion of Endeavor Translation
 							log_and_message_admins(span_boldannounce("SSfailsafe Warning: DEFCON [defcon_pretty()]. The Master Controller (\ref[Master]) has still not fired within the last [(5-defcon) * processing_interval] ticks. Killing and restarting..."))
+							*/
+							log_and_message_admins(span_boldannounce("Предупреждение SSfailsafe: DEFCON [defcon_pretty()]. Главный контроллер (\ref[Master]) всё ещё не срабатывает уже [count_ru(((5-defcon) * processing_interval), "тик;;а;ов")]. Производим принудительный перезапуск..."))
+							// End of Bastion of Endeavor Translation
 							--defcon
 							var/rtn = Recreate_MC()
 							if(rtn > 0)
 								defcon = 4
 								master_iteration = 0
+								/* Bastion of Endeavor Translation
 								log_and_message_admins(span_adminnotice("SSfailsafe Notice: MC (New:\ref[Master]) restarted successfully"))
+								*/
+								log_and_message_admins(span_adminnotice("Информация SSfailsafe: ГК (Новый:\ref[Master]) успешно перезапущен."))
+								// End of Bastion of Endeavor Translation
 							else if(rtn < 0)
+								/* Bastion of Endeavor Translation
 								log_game("SSfailsafe Notice: Could not restart MC (\ref[Master]), runtime encountered. Entering defcon 0")
 								log_and_message_admins(span_boldannounce("SSFAILSAFE ERROR: DEFCON [defcon_pretty()]. Could not restart MC (\ref[Master]), runtime encountered. I will silently keep retrying."))
+								*/
+								log_game("Предупреждение SSfailsafe: Не удалось перезапустить ГК (\ref[Master]), получен рантайм. Входим в defcon 0.")
+								log_and_message_admins(span_boldannounce("ОШИБКА SSFAILSAFE: DEFCON [defcon_pretty()]. Не удалось перезапустить ГК (\ref[Master]), получен рантайм. Продолжаем попытки молча..."))
+								// End of Bastion of Endeavor Translation
 							//if the return number was 0, it just means the mc was restarted too recently, and it just needs some time before we try again
 							//no need to handle that specially when defcon 0 can handle it
 						if(0) //DEFCON 0! (mc failed to restart)
@@ -81,7 +106,11 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe) // CHOMPEdit - Managed Globals
 							if(rtn > 0)
 								defcon = 4
 								master_iteration = 0
+								/* Bastion of Endeavor Translation
 								log_and_message_admins(span_adminnotice("SSfailsafe Notice: MC (New:\ref[Master]) restarted successfully"))
+								*/
+								log_and_message_admins(span_adminnotice("Информация SSfailsafe: ГК (Новый:\ref[Master]) успешно перезапущен."))
+								// End of Bastion of Endeavor Translation
 				else
 					defcon = min(defcon + 1,5)
 					master_iteration = Master.iteration
@@ -98,7 +127,15 @@ GLOBAL_REAL(Failsafe, /datum/controller/failsafe) // CHOMPEdit - Managed Globals
 
 /datum/controller/failsafe/stat_entry(msg)
 	if(!statclick)
+		/* Bastion of Endeavor Translation
 		statclick = new/obj/effect/statclick/debug(null, "Initializing...", src)
+		*/
+		statclick = new/obj/effect/statclick/debug(null, "Инициализация...", src)
+		// End of Bastion of Endeavor Translation
 
+	/* Bastion of Endeavor Translation
 	msg = "Failsafe Controller: [statclick.update("Defcon: [defcon_pretty()] (Interval: [Failsafe.processing_interval] | Iteration: [Failsafe.master_iteration])")]"
+	*/
+	msg = "Проверочный контроллер: [statclick.update("Defcon: [defcon_pretty()] | Интервал: [Failsafe.processing_interval] | Итерация: [Failsafe.master_iteration]")]"
+	// End of Bastion of Endeavor Translation
 	return msg

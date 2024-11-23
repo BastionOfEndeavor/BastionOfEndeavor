@@ -337,7 +337,11 @@
  * * params - The trimmed string following the command `/datum/tgs_chat_command/var/name].
  */
 /datum/tgs_chat_command/proc/Run(datum/tgs_chat_user/sender, params)
+	/* Bastion of Endeavor Translation
 	CRASH("[type] has no implementation for Run()")
+	*/
+	CRASH("[type] не имеет прока Run().")
+	// End of Bastion of Endeavor Translation
 
 /// User definable chat message. MUST NOT be overridden.
 /datum/tgs_message_content
@@ -399,7 +403,11 @@
 /datum/tgs_chat_embed/media/New(url)
 	..()
 	if(!istext(url))
+		/* Bastion of Endeavor Translation
 		CRASH("[/datum/tgs_chat_embed/media] created with no url!")
+		*/
+		CRASH("[/datum/tgs_chat_embed/media] создан без URL!")
+		// End of Bastion of Endeavor Translation
 
 	src.url = url
 
@@ -414,7 +422,11 @@
 /datum/tgs_chat_embed/footer/New(text)
 	..()
 	if(!istext(text))
+		/* Bastion of Endeavor Translation
 		CRASH("[/datum/tgs_chat_embed/footer] created with no text!")
+		*/
+		CRASH("[/datum/tgs_chat_embed/footer] создан без футера!")
+		// End of Bastion of Endeavor Translation
 
 	src.text = text
 
@@ -432,7 +444,11 @@
 /datum/tgs_chat_embed/provider/author/New(name)
 	..()
 	if(!istext(name))
+		/* Bastion of Endeavor Translation
 		CRASH("[/datum/tgs_chat_embed/provider/author] created with no name!")
+		*/
+		CRASH("[/datum/tgs_chat_embed/provider/author] создан без имени автора!")
+		// End of Bastion of Endeavor Translation
 
 	src.name = name
 
@@ -448,10 +464,18 @@
 /datum/tgs_chat_embed/field/New(name, value)
 	..()
 	if(!istext(name))
+		/* Bastion of Endeavor Translation
 		CRASH("[/datum/tgs_chat_embed/field] created with no name!")
+		*/
+		CRASH("[/datum/tgs_chat_embed/field] создан без имени!")
+		// End of Bastion of Endeavor Translation
 
 	if(!istext(value))
+		/* Bastion of Endeavor Translation
 		CRASH("[/datum/tgs_chat_embed/field] created with no value!")
+		*/
+		CRASH("[/datum/tgs_chat_embed/field] создан без значения!")
+		// End of Bastion of Endeavor Translation
 
 	src.name = name
 	src.value = value

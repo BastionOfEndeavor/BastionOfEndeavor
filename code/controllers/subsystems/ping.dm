@@ -4,7 +4,11 @@
  */
 
 SUBSYSTEM_DEF(ping)
+	/* Bastion of Endeavor Translation
 	name = "Ping"
+	*/
+	name = "Пинг"
+	// End of Bastion of Endeavor Translation
 	priority = FIRE_PRIORITY_PING
 	// init_stage = INITSTAGE_EARLY
 	wait = 4 SECONDS
@@ -13,7 +17,11 @@ SUBSYSTEM_DEF(ping)
 	var/list/currentrun = list()
 
 /datum/controller/subsystem/ping/stat_entry(msg)
+	/* Bastion of Endeavor Translation
 	msg = "P:[GLOB.clients.len]"
+	*/
+	msg = "| Подключено: [GLOB.clients.len]"
+	// End of Bastion of Endeavor Translation
 	return ..()
 
 /datum/controller/subsystem/ping/fire(resumed = FALSE)

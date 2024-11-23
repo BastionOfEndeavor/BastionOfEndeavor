@@ -8,9 +8,15 @@
 	var/hardsuit_click_mode = HARDSUIT_MIDDLE_CLICK
 
 /client/verb/toggle_hardsuit_mode()
+	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Wouldn't RIG be a better word?
 	set name = "Toggle Hardsuit Activation Mode"
 	set desc = "Switch between hardsuit activation modes."
 	set category = "OOC.Game Settings"
+	*/
+	set name = "Режим активации скафандра"
+	set desc = "Переключить режим активации жёсткого скафандра."
+	set category = "Предпочтения.Игра"
+	// End of Bastion of Endeavor Translation
 
 	hardsuit_click_mode++
 	if(hardsuit_click_mode > MAX_HARDSUIT_CLICK_MODE)
@@ -18,15 +24,32 @@
 
 	switch(hardsuit_click_mode)
 		if(HARDSUIT_MIDDLE_CLICK)
+			/* Bastion of Endeavor Translation
 			to_chat(src, "Hardsuit activation mode set to middle-click.")
+			*/
+			to_chat(src, "Активация жёсткого скафандра установлена на среднюю кнопку мыши.")
+			// End of Bastion of Endeavor Translation
 		if(HARDSUIT_ALT_CLICK)
+			/* Bastion of Endeavor Translation
 			to_chat(src, "Hardsuit activation mode set to alt-click.")
+			*/
+			to_chat(src, "Активация жёсткого скафандра установлена на Alt+ЛКМ.")
+			// End of Bastion of Endeavor Translation
 		if(HARDSUIT_CTRL_CLICK)
+			/* Bastion of Endeavor Translation
 			to_chat(src, "Hardsuit activation mode set to control-click.")
+			*/
+			to_chat(src, "Активация жёсткого скафандра установлена на Ctrl+ЛКМ.")
+			// End of Bastion of Endeavor Translation
 		else
 			// should never get here, but just in case:
+			/* Bastion of Endeavor Translation
 			soft_assert(0, "Bad hardsuit click mode: [hardsuit_click_mode] - expected 0 to [MAX_HARDSUIT_CLICK_MODE]")
 			to_chat(src, "Somehow you bugged the system. Setting your hardsuit mode to middle-click.")
+			*/
+			soft_assert(0, "Недопустимый режим активации жёсткого скафандра: [hardsuit_click_mode] – ожидалось значение от 0 до [MAX_HARDSUIT_CLICK_MODE]")
+			to_chat(src, "Вы каким-то образом сломали систему. Активация жёсткого скафандра установлена на среднюю кнопку мыши.")
+			// End of Bastion of Endeavor Translation
 			hardsuit_click_mode = HARDSUIT_MIDDLE_CLICK
 
 /mob/living/MiddleClickOn(atom/A)
@@ -69,7 +92,11 @@
 	if(istype(rig) && !rig.offline && rig.selected_module)
 		if(src != rig.wearer)
 			if(rig.ai_can_move_suit(src, check_user_module = 1))
+				/* Bastion of Endeavor Translation
 				message_admins("[key_name_admin(src, include_name = 1)] is trying to force \the [key_name_admin(rig.wearer, include_name = 1)] to use a hardsuit module.")
+				*/
+				message_admins("[key_name_admin(src, include_name = 1)] [verb_ru(src, "пыта;ется;ется;ется;ются;")] принудить [key_name_admin(rig.wearer, include_name = 1)] надеть модуль ИКС.")
+				// End of Bastion of Endeavor Translation
 			else
 				return 0
 		rig.selected_module.engage(A, alert_ai)
